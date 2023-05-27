@@ -8,11 +8,20 @@ These dotfiles are tailored to my workflow, preferences, and productivity
 needs, and I'm sharing them here in the hope that they can be useful to others 
 as well and to have a remote backup ;-).
 
+The dotfiles are somewhat tailored together to provide a streamlined experience, 
+with configurations that complement each other and try to mimic consistent 
+behavior across different tools. By using these dotfiles, you can benefit from 
+a cohesive and familiar environment that enhances productivity and efficiency.
+
 ## Features
 
-- **Zsh Configuration**: The repository includes my custom Zsh configuration 
-files. Refer to [zsh-config-doc.pdf](zsh/doc/zsh-config-doc.pdf) for further
-information.
+- **Zsh Configuration**: The repository includes my Zsh configuration 
+files located in the `zsh`. Refer to 
+[zsh-config-doc.pdf](zsh/doc/zsh-config-doc.pdf) for further information.
+
+-  **Tmux Configuration**: The repository includes my tmux configuration files, 
+located in the `tmux` directory. For more information, refer to the 
+[tmux-config-doc.pdf](tmux/doc/tmux-config-doc.pdf) document.
 
 ## Usage
 
