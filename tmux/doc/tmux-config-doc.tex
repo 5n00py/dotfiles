@@ -1,0 +1,139 @@
+\documentclass{article}
+
+\title{Tmux Configuration}
+\author{David Schmid}
+\date{May 17, 2023}
+
+\begin{document}
+
+\maketitle
+
+\section{About}
+Tmux is a terminal multiplexer, which allows multiple terminal sessions to be 
+created, accessed, and managed from a single screen. Tmux may be detached from 
+a screen and continue running in the background, then later reattached.
+
+\section{Installation}
+To install tmux on Debian-based systems, you can use the package manager:
+
+\begin{verbatim}
+sudo apt update
+sudo apt install tmux
+\end{verbatim}
+
+\section{Configuration}
+To use this configuration, follow these steps:
+
+\begin{enumerate}
+  \item Clone the dotfiles repository to your local machine:
+    \begin{verbatim}
+    git clone https://github.com/5n00py/dotfiles.git    
+	\end{verbatim}
+  \item Create a symbolic link from \texttt{\textasciitilde/.tmux.conf} to \texttt{~/dotfiles/tmux/tmux.conf}:
+    \begin{verbatim}
+    ln -s ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+    \end{verbatim}
+  \item Start a new tmux session.
+  \item You may need to install the plugins specified in this configuration file. 
+  Use the Tmux Plugin Manager (TPM) to install the plugins by 
+  pressing \texttt{prefix + I} within tmux.
+\end{enumerate}
+
+\section{Dependencies}
+The following dependencies are required to use this tmux configuration:
+\begin{itemize}
+  \item tmux: Terminal multiplexer.
+  \item Tmux Plugin Manager (TPM): Plugin manager for tmux.
+  \item xclip: Command-line interface to the X11 clipboard.
+  \item tree: Recursive directory listing program.
+  \item tmux-sensible: Set of sensible tmux options.
+  \item tmux-resurrect: Save and restore tmux sessions.
+  \item tmux-continuum: Continuous saving of tmux environment.
+  \item tmux-net-speed: Display network speed in the status bar.
+  \item tmux-cpu: Display CPU usage and load in the status bar.
+  \item tmux-sidebar: Quick navigation through files and directories.
+\end{itemize}
+
+\section{Keybind Overview}
+\subsection{Prefix}
+\begin{itemize}
+  \item \texttt{<Ctrl-Space>} - Main prefix key for all tmux commands
+\end{itemize}
+
+\subsection{General}
+\begin{itemize}
+  \item \texttt{prefix + r} - Reload configuration file
+  \item \texttt{prefix + s} - Toggle the status bar on and off
+  \item \texttt{prefix + q} - Detach from the current tmux session
+  \item \texttt{prefix + Tab} - List active sessions to choose one to switch to
+\end{itemize}
+
+\subsection{Pane Management}
+\begin{itemize}
+  \item \texttt{prefix + /} - Split window horizontally
+  \item \texttt{prefix + |} - Split window horizontally
+  \item \texttt{prefix + 7} - Split window horizontally
+  \item \texttt{prefix + -} - Split window vertically
+  \item \texttt{M-Left} - Select pane to the left
+  \item \texttt{M-Right} - Select pane to the right
+  \item \texttt{M-Up} - Select pane above
+  \item \texttt{M-Down} - Select pane below
+  \item \texttt{prefix + h} - Select pane to the left
+  \item \texttt{prefix + l} - Select pane to the right
+  \item \texttt{prefix + j} - Select pane below
+  \item \texttt{prefix + k} - Select pane above
+  \item \texttt{prefix + J} - Resize the current pane 5 cells down (non-repeatable)
+  \item \texttt{prefix + K} - Resize the current pane 5 cells up (non-repeatable)
+  \item \texttt{prefix + H} - Resize the current pane 5 cells to the left (non-repeatable)
+  \item \texttt{prefix + L} - Resize the current pane 5 cells to the right (non-repeatable)
+  \item \texttt{prefix + Left Arrow} - Resize the current pane 5 cells to the left (repeatable)
+  \item \texttt{prefix + Right Arrow} - Resize the current pane 5 cells to the right (repeatable)
+  \item \texttt{prefix + Up Arrow} - Resize the current pane 5 cells up (repeatable)
+  \item \texttt{prefix + Down Arrow} - Resize the current pane 5 cells down (repeatable)
+\end{itemize}
+
+\subsection{Copy Mode}
+\begin{itemize}
+  \item \texttt{prefix + v} - Enter copy mode
+  \item \texttt{prefix + p} - Paste buffer
+  \item \texttt{space} (in copy mode) - Start selection
+  \item \texttt{y} (in copy mode) - Copy selection to system clipboard
+  \item \texttt{Escape} - Exit copy mode (vi mode)
+\end{itemize}
+
+\subsection{Plugins}
+\begin{itemize}
+  \item \texttt{prefix + I} - Install new plugins (TPM command)
+  \item \texttt{prefix + w} - Save the current tmux session (tmux-resurrect)
+  \item \texttt{prefix + Tab} - Toggle sidebar with a directory tree (tmux-sidebar)
+  \item \texttt{prefix + Backspace} - Toggle sidebar and move cursor to it (tmux-sidebar)
+\end{itemize}
+
+\section{References}
+\subsection{External Resources}
+\begin{itemize}
+  \item tmux Guide: \texttt{https://tmuxguide.readthedocs.io}
+  \item tmux Github: \texttt{https://github.com/tmux/tmux}
+  \item tmuxcheatsheet: \texttt{https://tmuxcheatsheet.com}
+  \item tmux Plugin Manager (TPM): \texttt{https://github.com/tmux-plugins/tpm}
+\end{itemize}
+
+\subsection{Manual Pages}
+For a comprehensive list of all available tmux commands and their 
+descriptions, refer to the man pages by typing \texttt{man tmux} into 
+your terminal.
+
+\subsection{Useful Commands}
+\begin{itemize}
+  \item Start new session: \texttt{tmux new -s [session name]}
+  \item Attach to existing session: \texttt{tmux attach -t [session name]}
+  \item List all sessions: \texttt{tmux ls}
+  \item Detach from current session: \texttt{tmux detach}
+  \item Kill session: \texttt{tmux kill-session -t [session name]}
+\end{itemize}
+
+For a full list of commands and key bindings in tmux, you can use the 
+command-prompt within a tmux session: \texttt{prefix + :list-commands} 
+and \texttt{prefix + :list-keys}.
+
+\end{document}
