@@ -1,0 +1,44 @@
+# For detailed documentation of this zsh configuration, please refer to the
+# zsh-config-doc.pdf file located in the 'dotfiles/zsh/doc' directory. You can 
+# open the documentation by running the command 'zshdoc' after completing the 
+# configuration.
+#
+# Opening this 'zshrc' file for editing can be done by running the 'zshconfig' 
+# command. To reload the configuration and apply any changes made to this file 
+# or sourced files use the 'zshreload' command.
+
+
+# Define zsh_dir using the directory of the zshrc file
+export zsh_dir="$HOME/dotfiles/zsh"
+
+# Define zsh_aliases_dir based on zsh_dir and source aliases
+export zsh_aliases_dir="$zsh_dir/sources/aliases"
+source "$zsh_aliases_dir/aliases.zsh"
+
+# Define zsh_config_dir and source config
+export zsh_config_dir="$zsh_dir/sources/config"
+source "$zsh_config_dir/config.zsh"
+
+# Define zsh_bindings_dir and source bindings
+# The bindings files are mainly used to makage keybindings...
+export zsh_bindings_dir="$zsh_dir/sources/bindings"
+source "$zsh_bindings_dir/bindings.zsh"
+
+# Define zsh_functions_dir and source functions
+export zsh_functions_dir="$zsh_dir/sources/functions"
+source "$zsh_functions_dir/functions.zsh"
+
+# Define zsh_doc_dir and export
+export zsh_doc_dir="$zsh_dir/doc/zsh-config-doc"
+
+
+# ------------------------------------------------------------------------------
+# PRIVATE FILE IMPORTS
+# ------------------------------------------------------------------------------
+
+# WARNING: The following file contain private data that should not be  exposed 
+# publicly such as MAC adresses and API keys.
+# Make sure not to include this file in your public GitHub repository or other 
+# public dotfiles!
+
+source ~/.zsh-private.zsh
