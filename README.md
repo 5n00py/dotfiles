@@ -1,27 +1,42 @@
 # Dotfiles
 
-This repository contains my personal dotfiles, which are the configuration 
-files for various tools and applications that I use in my development 
-environment.
+This repository contains my personal dotfiles, which consist of configuration 
+files for various tools and applications that I utilize in my development 
+environment. These dotfiles are specifically tailored to align with my 
+workflow, preferences, and productivity needs. I am sharing them here with the 
+intention that they can be valuable to others and serve as a remote backup.
 
-These dotfiles are tailored to my workflow, preferences, and productivity 
-needs, and I'm sharing them here in the hope that they can be useful to others 
-as well and to have a remote backup ;-).
+The dotfiles within this repository are designed to work harmoniously, 
+providing a cohesive and streamlined experience. They have been carefully 
+configured to complement each other and establish consistent behavior across 
+different tools. By utilizing these dotfiles, you can benefit from a unified 
+and familiar environment that enhances your productivity and efficiency.
 
-The dotfiles are somewhat tailored together to provide a streamlined experience, 
-with configurations that complement each other and try to mimic consistent 
-behavior across different tools. By using these dotfiles, you can benefit from 
-a cohesive and familiar environment that enhances productivity and efficiency.
+Feel free to modify and customize these dotfiles to suit your own requirements 
+and preferences.
 
 ## Features
 
-- **Zsh Configuration**: The repository includes my Zsh configuration 
-files located in the `zsh`. Refer to 
-[zsh-config-doc.pdf](zsh/doc/zsh-config-doc.pdf) for further information.
+- **Neovim Configuration**: The repository includes my Neovim configuration 
+files, located in the nvim directory. Neovim is a highly extensible text editor 
+designed for efficient editing and coding. My Neovim setup includes customized 
+settings, plugins, and keybindings to enhance productivity and streamline my 
+coding workflow. Refer to [nvim-config-doc.pdf](nvim/doc/nvim-config-doc.pdf)
+for further information.
 
--  **Tmux Configuration**: The repository includes my tmux configuration files, 
-located in the `tmux` directory. For more information, refer to the 
-[tmux-config-doc.pdf](tmux/doc/tmux-config-doc.pdf) document.
+- **Zsh Configuration**: The repository includes my Zsh configuration files, 
+located in the zsh directory. Zsh is a powerful shell with advanced features 
+and customization options. My Zsh configuration includes aliases, functions, 
+and general settings to optimize command-line navigation and productivity. 
+Refer to [zsh-config-doc.pdf](zsh/doc/zsh-config-doc.pdf) for further 
+information.
+
+- **Tmux Configuration**: The repository includes my Tmux configuration files, 
+located in the tmux directory. Tmux is a terminal multiplexer that allows 
+multiple terminal sessions within a single window. My Tmux setup includes 
+custom keybindings, appearance settings, and plugin configurations to enhance 
+the terminal experience and improve productivity. For more information, refer 
+to the [tmux-config-doc.pdf](tmux/doc/tmux-config-doc.pdf) document.
 
 ## Usage
 
