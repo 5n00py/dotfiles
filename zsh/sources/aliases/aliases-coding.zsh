@@ -7,3 +7,7 @@ alias pyfmt='python3 -m black'
 # Formatting source code in a C project
 alias cfmt='find . -name "*.c" -o -name "*.h" | xargs clang-format -style=file:~/.clang-format -i'
 
+# Formatting rust code in a Rust project
+alias rfmt='find . -name "*.rs" | xargs rustfmt'
+
+
