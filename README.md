@@ -54,7 +54,7 @@ To use these dotfiles:
 2. Review the dotfiles and customize them as needed.
 
 3. Create symbolic links that point to the respecive files in the dotfiles
-   directory.
+   directory. You can use the script as described below.
 
 4. Install relevant dependencies
 
@@ -84,6 +84,19 @@ By not including the actual files in Git, you have the opportunity to back up
 your existing dotfiles before creating symbolic links. This is particularly
 useful if you already have custom configurations or important files in your
 home folder that you don't want to lose.
+
+There is a script 'setup_links.sh' included in this project which automates the
+process of backing up existing files and creating symbolic links for the
+configuration files included in this repository:
+
+- Make sure the script has execute permissions:
+   ```bash
+   chmod +x setup_links.sh
+   ```
+- Run the script:
+   ```bash
+   ./setup_links.sh
+   ```
 
 ## Compatibility
 
