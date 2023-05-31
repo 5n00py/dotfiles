@@ -13,6 +13,9 @@ create_symlink() {
         mv "$link_name" "${link_name}.bak"
     fi
 
+    # Create the directory of the symlink if not existing
+    mkdir -p "$(dirname "$link_name")"
+
     # Create the symlink
     ln -s "$target" "$link_name"
     echo "Created symlink: $link_name -> $target"
@@ -21,11 +24,11 @@ create_symlink() {
 # Link .zshrc
 create_symlink ~/dotfiles/zsh/zshrc ~/.zshrc
 
-# Link init.lua
+# Link nvim config
 create_symlink ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
 
-# Link lua directory
+# Link nvim lua directory
 create_symlink ~/dotfiles/nvim/lua ~/.config/nvim/lua
 
-# Link .tmux.conf
+# Link tmux config
 create_symlink ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
