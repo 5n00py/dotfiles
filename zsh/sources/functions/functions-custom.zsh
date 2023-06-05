@@ -32,33 +32,42 @@ alias fw='grepword'
 sanitize_filenames() {
     # Define the characters that we want to remove from filenames
     local bad_chars="&*\\\$@#!()[]{}:;\"'=<>?|^~"
-    
-    # Use the find command to locate all files under the current directory
-    find . -type f |
-    # Read each file found by the 'find' command
-    while IFS= read -r file; do
-        # Get the directory name and base name of the current file
-        directory=$(dirname "$file")
-        oldbasename=$(basename "$file")
+    local files="$@"
 
-        # Replace spaces in the base name with underscores
-        newbasename="${oldbasename// /_}"
+    # If no argument given or argument is '*', find all files under the current directory
+    if [ -z "$files" ] || [ "$files" = "*" ]; then
+        files=$(find . -type f)
+    fi
 
-        # Remove other potentially problematic characters from the base name
-        for char in $(echo $bad_chars | sed -e 's/\(.\)/\1\n/g'); do
-            newbasename="${newbasename//$char/}"
-        done
+    # Read each file from the given files or found by the 'find' command
+    for file in $files; do
+        if [ -f "$file" ]; then
+            # Get the directory name and base name of the current file
+            directory=$(dirname "$file")
+            oldbasename=$(basename "$file")
 
-        # Check if a file with the new base name already exists in the directory
-        if [ ! -e "$directory/$newbasename" ]; then
-            # If not, rename the current file to the new base name
-            mv -- "$file" "$directory/$newbasename"
+            # Replace spaces in the base name with underscores
+            newbasename="${oldbasename// /_}"
+
+            # Remove other potentially problematic characters from the base name
+            for char in $(echo $bad_chars | sed -e 's/\(.\)/\1\n/g'); do
+                newbasename="${newbasename//$char/}"
+            done
+
+            # Check if a file with the new base name already exists in the directory
+            if [ ! -e "$directory/$newbasename" ]; then
+                # If not, rename the current file to the new base name
+                mv -- "$file" "$directory/$newbasename"
+            else
+                # If a file with the new base name already exists, print an error message
+                echo "Error: File '$directory/$newbasename' already exists. Skipped renaming '$file'."
+            fi
         else
-            # If a file with the new base name already exists, print an error message
-            echo "Error: File '$directory/$newbasename' already exists. Skipped renaming '$file'."
+            echo "Error: '$file' is not a regular file or does not exist."
         fi
     done
 }
+
 
 # This function moves all directories from the current directory to the parent 
 # directory.

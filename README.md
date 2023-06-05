@@ -17,26 +17,30 @@ and preferences.
 
 ## Features
 
-- **Neovim Configuration**: The repository includes my Neovim configuration
-files, located in the nvim directory. Neovim is a highly extensible text editor
+- **Neovim Configuration**: Neovim is a highly extensible text editor
 designed for efficient editing and coding. My Neovim setup includes customized
 settings, plugins, and keybindings to enhance productivity and streamline my
 coding workflow. Refer to [nvim-config-doc.pdf](nvim/doc/nvim-config-doc.pdf)
 for further information.
 
-- **Zsh Configuration**: The repository includes my Zsh configuration files,
-located in the zsh directory. Zsh is a powerful shell with advanced features
+- **Zsh Configuration**: Zsh is a powerful shell with advanced features
 and customization options. My Zsh configuration includes aliases, functions,
 and general settings to optimize command-line navigation and productivity.
 Refer to [zsh-config-doc.pdf](zsh/doc/zsh-config-doc.pdf) for further
 information.
 
-- **Tmux Configuration**: The repository includes my Tmux configuration files,
-located in the tmux directory. Tmux is a terminal multiplexer that allows
+- **Tmux Configuration**: Tmux is a terminal multiplexer that allows
 multiple terminal sessions within a single window. My Tmux setup includes
 custom keybindings, appearance settings, and plugin configurations to enhance
 the terminal experience and improve productivity. For more information, refer
 to the [tmux-config-doc.pdf](tmux/doc/tmux-config-doc.pdf) document.
+
+- **Cmus Configuration**: cmus is a lightweight, feature-rich music player 
+designed to be operated entirely from the keyboard. The interface, inspired by 
+vim, allows for efficient navigation and manipulation of music libraries of 
+any size. With cmus, you can manage playlists, q tracks, and even manipulate 
+audio settings in the terminal. In addition, cmus supports a variety of audio 
+formats and can be extended via scripts and plugins.
 
 ## Usage
 

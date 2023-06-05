@@ -32,3 +32,6 @@ create_symlink ~/dotfiles/nvim/lua ~/.config/nvim/lua
 
 # Link tmux config
 create_symlink ~/dotfiles/tmux/tmux.conf ~/.tmux.conf
+
+# Link cmus config
+create_symlink ~/dotfiles/cmus/rc ~/.config/cmus/rc
