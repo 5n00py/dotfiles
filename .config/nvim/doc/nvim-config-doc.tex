@@ -1,0 +1,305 @@
+\documentclass{article}
+
+\usepackage{listings}
+\usepackage{hyperref}
+
+\newcommand{\tl}{\textless}
+\newcommand{\tg}{\textgreater}
+
+\title{Neovim Configuration}
+\author{David Schmid}
+\date{May 29, 2023}
+
+\begin{document}
+\maketitle
+
+\section{About Neovim}
+
+Neovim is a powerful, extensible, and highly customizable text editor built upon 
+the foundations of Vim. This configuration file for Neovim ('init.lua') allows 
+to tailor the editor to specific needs and preferences. You can unleash the 
+power by customizing key mappings that resonate with your style, channeling 
+the raw energy of plugins and sculpting the appearance. With each strum of 
+configuration you transcend the ordinary editor to greatness.
+
+By leveraging the Lua programming language, Neovim allows you to command the
+editor with unparalleled finesse. This manuscript ignits the flame of your 
+Neovim journey, serving as a catalyst of boundless exploration. So go forth, 
+fearless adventurer and may your Neovim journey be a symphony of joy and 
+discovery.
+
+\section{Installation and Configuration}
+
+\subsection{Installation}
+
+\subsubsection{Installing Neovim}
+To install Neovim, visit the official Neovim GitHub page at 
+
+\href{https://github.com/neovim/neovim/wiki/Installing-Neovim}{https://github.com/neovim/neovim/wiki/Installing-Neovim} 
+
+and follow the instructions provided for your specific platform.
+
+For Ubuntu users, it's advised against using the `apt` package manager for 
+installing Neovim as the supported version tends to lag behind. Instead, 
+consider using the `snap` package manager with the following command:
+\begin{verbatim}
+sudo snap install nvim --classic
+\end{verbatim}
+This provides a more up-to-date version of Neovim. Alternatively, for the 
+latest version, consider building Neovim from the source code. As of writing, 
+the current version in use is 0.9.0.
+
+\subsubsection{Installing Dependencies}
+Before proceeding with the configuration, ensure that the required dependencies 
+are installed on your system. These are detailed in Section \ref{sec:dependencies}.
+
+\subsubsection{Creating Configuration Directory}
+Create a directory in your system's configuration folder where the `init.lua` 
+file will be placed:
+\begin{verbatim}
+mkdir -p ~/.config/nvim
+\end{verbatim}
+
+\subsubsection{Creating Symbolic Links}
+Create symbolic links from `~/.config/nvim/init.lua` and `~/.config/nvim/lua` 
+pointing to the `~/dotfiles/nvim` directory:
+\begin{verbatim}
+ln -s ~/dotfiles/nvim/init.lua ~/.config/nvim/init.lua
+ln -s ~/dotfiles/nvim/lua ~/.config/nvim/lua
+\end{verbatim}
+
+\subsubsection{Obtaining Configuration Files}
+Get the contents from the GitHub repository at 
+
+\href{https://github.com/5n00py/dotfiles}{https://github.com/5n00py/dotfiles}.
+
+\subsubsection{Launching Neovim}
+Start Neovim by running the `nvim` command in the terminal. Neovim will 
+automatically load the `init.lua` file and apply the specified configurations.
+
+\subsubsection{Customizing Neovim}
+Open the `init.lua` file in Neovim and make any desired modifications to the 
+settings, key mappings, and plugin configurations to tailor the editor to your 
+preferences.
+
+\subsubsection{Installing Plugins}
+After launching Neovim with the custom `init.lua` file, execute the `:Lazy` 
+command to trigger the installation and configuration of any lazily loaded 
+plugins specified in this `init.lua` file. The command ensures that all 
+necessary plugins are installed, and their respective configurations are applied.
+
+\subsubsection{Checking System Health}
+After launching Neovim with the custom `init.lua` file, run the `:checkhealth` 
+command to analyze the setup and identify potential issues. Review the output, 
+and resolve any detected problems according to the provided suggestions or by 
+referring to the relevant plugin documentation.
+
+\subsection{Dependencies}\label{sec:dependencies}
+
+This configuration for Neovim requires several external dependencies for 
+optimal performance and extended functionality. Ensure that you have the 
+following dependencies installed on your system:
+
+\begin{itemize}
+
+\item \textbf{Ripgrep:} A line-oriented search tool that recursively searches 
+the current directory for a regex pattern. This is required for plugins like 
+Telescope.
+
+\item \textbf{FD:} A simple, fast, and user-friendly alternative to the 'find'
+command. This is required for Telescope.
+
+\item \textbf{Build Essentials:} Basic development tools. At least 'make' 
+should be installed for Telescope.
+
+\item \textbf{Clipboard Tool (xclip, pbcopy, etc.):} For clipboard support, a 
+clipboard tool is required. 'xclip' is commonly used on Linux, while 'pbcopy' 
+and 'pbpaste' are used on MacOS. Install via your package manager. For instance, 
+'sudo apt install xclip' can be used on Ubuntu.
+
+\item \textbf{Git:} Many Neovim plugins are hosted on GitHub, and Git is 
+required to clone and update them.
+
+\item \textbf{Curl, Unzip, Gzip, Tar:} These utilities are often required for 
+downloading and extracting files.
+
+\item \textbf{Plenary:} A Lua library used by several Neovim plugins for 
+utility functions. It is installed as part of the plugin installation process.
+
+\item \textbf{LuaRocks:} The package manager for Lua modules. Some plugins may 
+require Lua modules that can be installed using LuaRocks. Install via package 
+manager. For instance, 'sudo apt install luarocks' can be used on Ubuntu.
+
+\item \textbf{Python Modules:} Neovim uses Python3 for some of its plugins and 
+features. Specific requirements will be updated as necessary. 
+
+\item \textbf{LSP-related Dependencies:} For the Language Server Protocol (LSP) 
+to function, you need to have the respective language server installed for each 
+programming language you plan to use in Neovim. These include:
+\begin{itemize}
+\item Rust: Rust Analyzer
+\item Python: Pyright
+\item C: Clangd
+\item JavaScript and TypeScript: Tsserver
+\item Ruby: Solargraph
+\item Go: Gopls
+\item Shell: Bashls
+\end{itemize}
+Each language server has its own installation instructions that may require 
+some research.
+
+\end{itemize}
+
+\subsection{Keybind Overview}\label{sec:keybind_overview}
+
+This section provides an overview of the most commonly used key mappings in 
+this Neovim configuration. This is not an exhaustive list. You can find a 
+complete list of mappings by running the ':map' command or by pressing the 
+\tl leader\tg\ key and \tl backspace\tg\ to show the Which-Key keybinds popup.
+
+The Which-Key plugin provides a visual representation of key mappings. When 
+you press \tl leader\tg\ followed by the \tl backspace\tg\ key, a popup window 
+will appear, displaying a hierarchical menu of key mappings and their associated 
+actions. 
+As you start typing a key combination, Which-Key dynamically generates a popup 
+window showing all available options and their associated actions, allowing 
+you to navigate through the mappings with ease.
+
+The \tl leader\tg\ key is set to the spacebar by default.
+
+\subsubsection{Tab Management}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Key & Description & Mode \\
+\hline
+\tl tab\tg n & Open a new tab with a new empty buffer & Normal \\
+\tl tab\tg \tl tab\tg & Go to the next tab & Normal \\
+\tl tab\tg p & Go to the previous tab & Normal \\
+\tl tab\tg t & Open a new tab with a terminal in insert mode & Normal \\
+\tl tab\tg c & Close the current tab & Normal \\
+\hline
+\end{tabular}
+
+Tab navigation key mappings are associated with the \tl tab\tg\ key. In case the 
+\tl tab\tg\ key is already associated with a different action in normal mode, 
+you may need to adjust the key mappings to ensure smooth tab navigation within 
+Neovim.
+
+\subsubsection{Window Management}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Key & Description & Mode \\
+\hline
+\tl leader\tg w & Switch windows & Normal \\
+\tl leader\tg q & Switch back to previously used window & Normal \\
+\tl leader\tg / & Open empty window on the right & Normal \\
+\tl leader\tg - & Open empty window below & Normal \\
+\tl leader\tg J & Resize window 5 cells down & Normal \\
+\tl leader\tg K & Resize window 5 cells up & Normal \\
+\tl leader\tg H & Resize window 5 cells left & Normal \\
+\tl leader\tg L & Resize window 5 cells right & Normal \\
+\tl leader\tg \tl Left\tg & Resize window 5 cells left & Normal \\
+\tl leader\tg \tl Right\tg & Resize window 5 cells right & Normal \\
+\tl leader\tg \tl Down\tg & Resize window 5 cells down & Normal \\
+\tl leader\tg \tl Up\tg & Resize window 5 cells up & Normal \\
+\tl leader\tg h & Select window on the left & Normal \\
+\tl leader\tg l & Select window on the right & Normal \\
+\tl leader\tg j & Select window below & Normal \\
+\tl leader\tg k & Select window above & Normal \\
+\tl leader\tg e & Toggle NERDTree window on and off & Normal \\
+\tl leader\tg ct & Change Transparency & Normal \\
+\hline
+\end{tabular}
+
+\subsubsection{Editing}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Key & Description & Mode \\
+\hline
+\tl leader\tg a & Select all text in a buffer & Normal \\
+\tl leader\tg d & Delete text without yanking & Visual \\
+\tl leader\tg p & Paste text without yanking & Visual \\
+\tl leader\tg tc & Toggle code comment & Normal / Visual \\
+\tl leader\tg ta & Toggle autocompletion (cmp) & Normal / Visual \\
+\tl leader\tg n & Edit nvim init.lua & Normal \\
+\tl leader\tg u & Toggle Undotree & Normal \\
+\hline
+\end{tabular}
+
+Neovim provides a wide range of standard editing functions and commands 
+to manipulate and modify text. These include operations like copying, cutting, 
+pasting, undoing, and redoing. You can access these functions through intuitive 
+key combinations and commands, making it efficient to edit and manipulate text 
+within Neovim. Familiarize yourself with these standard editing functions to 
+enhance your editing experience in Neovim.
+
+\subsubsection{Telescope}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Key & Description & Mode \\
+\hline
+\tl leader\tg ff & Find files & Normal \\
+\tl leader\tg fg & Live grep & Normal \\
+\tl leader\tg fb & List buffers & Normal \\
+\tl leader\tg fh & Help tags & Normal \\
+\tl leader\tg fw & Grep search on a WORD & Normal \\
+\hline
+\end{tabular}
+
+\subsubsection{LSP}
+
+\begin{tabular}{|l|l|l|}
+\hline
+Key & Description & Mode \\
+\hline
+gd & Go to definition & Normal \\
+gD & Go to declaration & Normal \\
+K & Show hover information & Normal \\
+gr & Find references & Normal \\
+\tl leader\tg fmt & Format code & Normal \\
+\tl leader\tg d & Show diagnostics under cursor & Normal \\
+\hline
+\end{tabular}
+
+\subsubsection{Custom Commands}
+
+\begin{tabular}{|l|l|}
+\hline
+Format & Description \\
+\hline
+:Rep \tl c\tg \tl w\tg & Repeat \tl c\tg\ times word(s) \tl w\tg\ and insert them to the buffer \\
+\hline
+\end{tabular}
+
+\section{References and External Resources}\label{sec:references}
+
+This section presents some external resources that can be useful in 
+understanding and working with Neovim.
+
+\subsection{External Resources}
+
+\begin{itemize}
+\item Neovim Documentation: \href{https://neovim.io/doc/}{https://neovim.io/doc/}
+\item Lua Documentation: \href{https://www.lua.org/docs.html}{https://www.lua.org/docs.html}
+\item Awesome Neovim: A curated collection of awesome plugins, themes, and resources for Neovim: \href{https://github.com/rockerBOO/awesome-neovim}{https://github.com/rockerBOO/awesome-neovim}
+\item Neovim GitHub Repository: \href{https://github.com/neovim/neovim}{https://github.com/neovim/neovim}
+\item Neovim subreddit: \href{https://www.reddit.com/r/neovim/}{https://www.reddit.com/r/neovim/}
+\end{itemize}
+
+\subsection{Manual Pages}
+
+Neovim provides a built-in help system which can be accessed using the ':help' 
+command. Below are a few examples of how to use this system:
+
+\begin{itemize}
+\item \verb|:help init.lua|: Provides an introduction to customizing.
+\item \verb|:h key-notation|: Displays information about key notation.
+\item \verb|:h :w|: Views the help page for the write command.
+\end{itemize}
+
+
+\end{document}

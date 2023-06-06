@@ -1,0 +1,96 @@
+# ------------------------------------------------------------------------------
+# General Settings and Music Directory
+# ------------------------------------------------------------------------------
+
+# Note: By default, cmus automatically saves settings to the 
+# ~/.config/cmus/autosave file when quitting the program. This autosave file 
+# will include settings changes you made during your cmus session, even if they 
+# weren't added to the rc file. The following should prevent cmus from saving
+# settings automatically, however it does not work.
+# set autosave=false 
+# If you want to completely reset your cmus settings, you can delete the 
+# autosave file and then restart cmus.
+
+# Set the music directory
+add ~/Music
+
+# ------------------------------------------------------------------------------
+# Output Mixer Settings
+# ------------------------------------------------------------------------------
+
+# This sets the output plugin to ALSA. This is necessary when wanting to 
+# directly interface with your hardware without the overhead of audio servers 
+# like PulseAudio.
+# It might result in lower latency and better compatibility with certain audio
+# devices.
+# Note: You would typically use this if you are not using Bluetooth or other 
+# devices managed by PulseAudio.
+set output_plugin=alsa
+
+# This sets the ALSA device to be used for audio output to the 'default' device. 
+# The 'default' device is defined in your ALSA configuration.
+set dsp.alsa.device=default
+
+# This sets the ALSA device to be used for volume control to the 'default' device. 
+# The 'default' device is defined in your ALSA configuration.
+set mixer.alsa.device=default
+
+# This sets the ALSA channel to be used for volume control. The 'Master' 
+# channel is typically the main output volume for your system.
+set mixer.alsa.channel=Master
+
+# Expand the list of albums for an artist in the library view when the artist 
+# is selected. This enhances navigation, especially in large music collections.
+set auto_expand_albums_follow=true
+
+# Set cmus to use the PulseAudio output plugin. This might be necessary when using
+# Bluetooth headphones or other devices that are managed by PulseAudio.
+# set output_plugin=pulse
+
+
+# ------------------------------------------------------------------------------
+# Appearance
+# ------------------------------------------------------------------------------
+
+colorscheme gruvbox-warm
+
+# Formatting of the "current" line in views, includes artist name, album name 
+# and track number
+set format_current= %a: %l: %02n 
+
+# Formatting of lines in playlist views, includes artist name, album name, 
+# track title and year
+set format_playlist= %-18a  %-18l  %t%=  %04y 
+
+# Formatting of lines in playlist views for various artists compilations, 
+# includes artist name, album name, track title and year
+set format_playlist_va= %-18a %-18l  %t%=  %04y 
+
+# Formatting of lines in the track window, includes track title and year
+set format_trackwin=● %t%=  %04y
+
+# Formatting of lines in the track window when displaying album information, 
+# includes album name
+set format_trackwin_album=%l
+
+# Formatting of lines in the track window for various artists compilations, 
+# includes track title and year
+set format_trackwin_va=● %t%=  %04y
+
+# Formatting of lines in the tree view, includes album name
+set format_treewin= %l
+
+# Formatting of lines in the tree view when displaying artist information, 
+# includes artist name
+set format_treewin_artist= %a
+
+# Formatting of the status line at the top of the cmus window, includes 
+# playback status, track title, follow/repeat/shuffle modes, and playback 
+# position/duration
+set format_statusline= %{status} %t%= %1{follow}%1{repeat}%1{shuffle} %{?show_playback_position?%{position} %{?duration?/ %{duration} }?%{?duration?%{duration} }} 
+
+# Formatting of the window title, just sets it to "cmus"
+set format_title=cmus
+
+
+# Inspirations: https://forum.archlabslinux.com/t/share-your-cmus-config/4245
