@@ -1,0 +1,54 @@
+" -----------------------------------------------------------------------------
+" Zathura settings
+" -----------------------------------------------------------------------------
+
+" Clipboard
+set selection-clipboard clipboard
+
+" Search
+set incremental-search true
+set search-hadjust true
+
+" Typography
+set font "Terminus 12"
+
+" Open in fullscreen 
+set window-height 3000
+set window-width 3000
+
+" -----------------------------------------------------------------------------
+" Zathura mappings
+" -----------------------------------------------------------------------------
+
+" Zoom in/out
+map [normal]     z zoom in
+map [normal]     Z zoom out
+map [fullscreen] z zoom in
+map [fullscreen] Z zoom out
+
+" Toggle mode
+map [normal]     D toggle_page_mode
+map [fullscreen] D toggle_page_mode
+
+" Fullscreen
+ map [normal]     f toggle_fullscreen
+ map [fullscreen] f toggle_fullscreen
+
+" Reload
+map [normal]     <C-r> reload
+map [fullscreen] <C-r> reload
+
+" Status bar
+map [normal]     s toggle_statusbar
+map [fullscreen] s toggle_statusbar
+
+" Set width as in mupdf
+map [normal]     H adjust_window best-fit
+map [normal]     W adjust_window width
+map [fullscreen] H adjust_window best-fit
+map [fullscreen] W adjust_window width
+
+map [normal]     i set recolor
+map [fullscreen] i set recolor
+
+" vim: ft=vim

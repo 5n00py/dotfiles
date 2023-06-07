@@ -56,6 +56,15 @@ be extended via scripts and plugins.
 - Files & Directories: [.config/cmus](.config/cmus)
 - Documentation: [cmus](https://cmus.github.io/#home)
 
+### Zathura
+
+Zathura is a lightweight and customizable document viewer with a minimalistic 
+design. It offers a streamlined reading experience for various document formats, 
+including PDF, EPUB, and more.
+
+- Files & Directories: [.config/zathura](.config/zathura)
+- Documentation: [Zathura Documentation](https://pwmt.org/projects/zathura/documentation/)
+
 ## Usage
 
 Feel free to explore and use these dotfiles according to your own preferences.
