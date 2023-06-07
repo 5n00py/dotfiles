@@ -17,30 +17,44 @@ and preferences.
 
 ## Features
 
-- **Neovim Configuration**: Neovim is a highly extensible text editor
-designed for efficient editing and coding. My Neovim setup includes customized
-settings, plugins, and keybindings to enhance productivity and streamline my
-coding workflow. Refer to [nvim-config-doc.pdf](nvim/doc/nvim-config-doc.pdf)
-for further information.
+### Neovim 
 
-- **Zsh Configuration**: Zsh is a powerful shell with advanced features
-and customization options. My Zsh configuration includes aliases, functions,
-and general settings to optimize command-line navigation and productivity.
-Refer to [zsh-config-doc.pdf](zsh/doc/zsh-config-doc.pdf) for further
-information.
+Neovim is a highly extensible text editor designed for efficient editing and 
+coding. My Neovim setup includes customized settings, plugins, and keybindings 
+to enhance productivity and streamline my coding workflow.
 
-- **Tmux Configuration**: Tmux is a terminal multiplexer that allows
-multiple terminal sessions within a single window. My Tmux setup includes
-custom keybindings, appearance settings, and plugin configurations to enhance
-the terminal experience and improve productivity. For more information, refer
-to the [tmux-config-doc.pdf](tmux/doc/tmux-config-doc.pdf) document.
+- Files & Directories: [.config/nvim](.config/nvim)
+- Documentation: [nvim-config-doc.pdf](.config/nvim/doc/nvim-config-doc.pdf), [neovim documentation](https://neovim.io/doc/) 
 
-- **Cmus Configuration**: cmus is a lightweight, feature-rich music player 
-designed to be operated entirely from the keyboard. The interface, inspired by 
-vim, allows for efficient navigation and manipulation of music libraries of 
-any size. With cmus, you can manage playlists, q tracks, and even manipulate 
-audio settings in the terminal. In addition, cmus supports a variety of audio 
-formats and can be extended via scripts and plugins.
+### Zsh 
+
+Zsh is a powerful shell with advanced features and customization options. My 
+Zsh configuration includes aliases, functions, and general settings to optimize 
+command-line navigation and productivity.
+
+- Files & Directories: [.zshrc](.zshrc), [.config/zsh](.config/zsh)
+- Documentation: [zsh-config-doc.pdf](.config/zsh/doc/nvim-config-doc.pdf), [Zsh Manual](https://zsh-manual.netlify.app/) 
+
+### Tmux 
+
+Tmux is a terminal multiplexer that allows multiple terminal sessions within a 
+single window. My Tmux setup includes custom keybindings, appearance settings, 
+and plugin configurations to enhance the terminal experience and improve 
+productivity. 
+
+- Files & Directories: [.tmux.conf](.tmux.conf), [.config/tmux](.config/tmux)
+- Documentation: [tmux-config-doc.pdf](.config/tmux/doc/tmux-config-doc.pdf), [Tmux guide](https://tmuxguide.readthedocs.io/en/latest/index.html)
+
+### Cmux 
+Cmus is a lightweight, feature-rich music player designed to be operated 
+entirely from the keyboard. The interface, inspired by vim, allows for 
+efficient navigation and manipulation of music libraries of any size. With 
+cmus, you can manage playlists, q tracks, and even manipulate audio settings 
+in the terminal. In addition, cmus supports a variety of audio formats and can 
+be extended via scripts and plugins.
+
+- Files & Directories: [.config/cmus](.config/cmus)
+- Documentation: [cmus](https://cmus.github.io/#home)
 
 ## Usage
 
