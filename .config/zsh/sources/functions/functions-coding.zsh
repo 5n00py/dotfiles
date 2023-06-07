@@ -16,3 +16,20 @@ activate_venv() {
         echo "No 'venv' directory found."
     fi
 }
+
+# Define a function named "grip_preview" that takes a file as an argument$
+# renders the markdown and opens it in the default brosers
+grip_preview() {
+  local file="$1"
+  local port=6419  # Port number used by grip (can be modified if desired)
+
+  # Start grip in the background, redirecting its output to /dev/null
+  grip "$file" $port &> /dev/null &
+
+  # Generate the URL for the grip preview based on the file and port
+  local url="http://localhost:$port"
+
+  # Open the URL in the default web browser
+  $BROWSER "$url"
+}
+
