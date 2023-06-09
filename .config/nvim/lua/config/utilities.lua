@@ -52,5 +52,5 @@ return {
   ToggleHighlightSearch = ToggleHighlightSearch,
   ToggleWrap = ToggleWrap,
   ToggleSpellChecking = ToggleSpellChecking,
-  ClearSearchHighlighting = ClearSearchHighlighting
+  ClearSearchHighlighting = ClearSearchHighlighting,
 }

@@ -81,5 +81,5 @@ set_keymap('n', '<leader>tl', ':lua ToggleLineNumbers()<CR>', "Toggle line numbe
 set_keymap('n', '<leader>th', ':lua ToggleHighlightSearch()<CR>', "Toggle search highlight")
 set_keymap('n', '<leader>ts', ':lua ToggleSpellChecking()<CR>', "Toggle spell checking")
 set_keymap('n', '<leader>tw', ':lua ToggleWrap()<CR>', "Toggle line wrapping")
-
+set_keymap('n', '<leader>tt', ':TransparentToggle<CR>', "Toggle background transparency")
 

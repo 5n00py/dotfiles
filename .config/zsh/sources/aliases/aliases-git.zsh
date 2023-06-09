@@ -1,8 +1,8 @@
 # Display a compact, one-line per commit version of the commit log
 alias gl='git log --oneline'
 
-# Show changes that are staged for commit
-alias gds='git diff --staged'
+# Show changes that are staged for commit in neovim
+alias gds='git diff --staged | nvim -'
 
 # Show the status of the working tree
 alias gs='git status'

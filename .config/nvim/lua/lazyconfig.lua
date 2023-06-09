@@ -13,6 +13,13 @@ require('lazy').setup({
 	'shaunsingh/nord.nvim',
 	-- A theme based off of the nord color palette
 	-- A light theme with cool blue and green hues
+	
+	'ellisonleao/gruvbox.nvim',
+	-- A retro-groove color scheme, distinguished by a dark background 
+	-- colored with warm, muted tones
+
+	'xiyaowong/transparent.nvim',
+	-- Remove all background colors to make nvim transparent
 
 	{	'nvim-lualine/lualine.nvim',
 		-- A blazing fast and easy to configure statusline
@@ -64,10 +71,27 @@ require('lazy').setup({
 
 	'tpope/vim-fugitive',
 	-- the premier Vim plugin for Git
+
+	{	'jose-elias-alvarez/null-ls.nvim',
+		-- hook non-LSP sources into it the LSP client
+		opts = function()
+			return require 'plugins.lsp_related.null_ls'
+		end,
+	},
 	
-	'williamboman/mason.nvim',
-	-- Easily install and manage LSP servers, DAP servers, linters, and formatters.
-	-- See ':help mason.nvim'
+	{	'williamboman/mason.nvim',
+		-- Easily install and manage LSP servers, DAP servers, linters, and formatters.
+		-- See ':help mason.nvim'
+		build = ':MasonUpdate', -- :MasonUpdate updates registry contents
+		opts = {
+			ensure_installed = {
+				'mypy',
+				'ruff',
+				'pyright',
+				'black',
+			},
+		},
+	},
 
 	{	'neovim/nvim-lspconfig',
 		-- Configs for the Nvim LSP client 
