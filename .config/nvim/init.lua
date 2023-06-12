@@ -73,7 +73,7 @@ require('plugins.autocompletion')
 require('plugins.comment')
 require('plugins.treesitter')
 require('plugins.undotree')
-
+require('plugins.chatgpt')
 
 --                     ♫♪♪♫♪♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪♪♫♪♪
 -- =============================================================================
