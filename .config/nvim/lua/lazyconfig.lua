@@ -141,6 +141,13 @@ require('lazy').setup({
 	-- Continuously updated session files
 	-- Useful to restore tmux sessions with tmux-resurrect
 	
+	{	'christoomey/vim-tmux-navigator',
+		-- When combined with a set of tmux key bindings, the plugin will 
+		-- allow you to navigate seamlessly between vim and tmux splits using 
+		-- a consistent set of hotkeys.
+		lazy = false,
+	},
+
 	'mbbill/undotree',
 	-- Visualize the undo history and make it easy to browse and switch between 
 	-- different undo branches.

@@ -40,12 +40,6 @@ set_keymap('n', '<leader><Right>', ':vertical resize +5<CR>', "Resize window 5 c
 set_keymap('n', '<leader><Down>', ':resize +5<CR>', "Resize window 5 down")
 set_keymap('n', '<leader><Up>', ':resize -5<CR>', "Resize window 5 up")
 
--- Window Selection
-set_keymap('n', '<leader>h', '<C-w>h', "Select window on the left")
-set_keymap('n', '<leader>l', '<C-w>l', "Select window on the right")
-set_keymap('n', '<leader>j', '<C-w>j', "Select window below")
-set_keymap('n', '<leader>k', '<C-w>k', "Select window above")
-
 -- Editing
 ----------
 --
