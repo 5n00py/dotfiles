@@ -42,8 +42,8 @@ single window. My Tmux setup includes custom keybindings, appearance settings,
 and plugin configurations to enhance the terminal experience and improve 
 productivity. 
 
-- Files & Directories: [.tmux.conf](.tmux.conf), [.config/tmux](.config/tmux)
-- Documentation: [tmux-config-doc.pdf](.config/tmux/doc/tmux-config-doc.pdf), [Tmux guide](https://tmuxguide.readthedocs.io/en/latest/index.html)
+- Files & Directories: [.tmux.conf](.tmux.conf) 
+- [Tmux guide](https://tmuxguide.readthedocs.io/en/latest/index.html)
 
 ### Cmux 
 Cmus is a lightweight, feature-rich music player designed to be operated 
