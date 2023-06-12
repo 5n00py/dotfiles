@@ -69,6 +69,15 @@ require('lazy').setup({
 		end
 	},
 
+	{
+		'stevearc/oil.nvim',
+		-- A vim-vinegar like file explorer that lets you edit your filesystem 
+		-- like a normal Neovim buffer.
+		opts = {},
+		-- Optional dependencies
+		dependencies = { "nvim-tree/nvim-web-devicons" },
+	},
+
 	'tpope/vim-fugitive',
 	-- the premier Vim plugin for Git
 

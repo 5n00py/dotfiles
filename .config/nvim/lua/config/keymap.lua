@@ -54,8 +54,10 @@ set_keymap('n', '<leader>ch', ':lua ClearSearchHighlighting()<CR>',
 set_keymap('v', '<leader>d', '"_d', "Delete text without yanking")
 set_keymap('v', '<leader>p', '"_dP', "Paste text without yanking")
 
--- Open this init.lua file for editing directly
+-- Open the init.lua file for editing directly
 set_keymap('n', '<leader>n', ':edit ~/.config/nvim/init.lua<CR>', "Edit nvim init.lua")
+
+set_keymap('n', '<leader>v', '<C-v>', "Enter visual block mode")
 
 
 -- Terminal-related mappings

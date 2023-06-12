@@ -74,6 +74,7 @@ require('plugins.comment')
 require('plugins.treesitter')
 require('plugins.undotree')
 require('plugins.chatgpt')
+require('plugins.oil')
 
 --                     ♫♪♪♫♪♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪♪♫♪♪
 -- =============================================================================
