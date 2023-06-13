@@ -8,7 +8,6 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 require('config.options')
-local set_keymap = require('config.utilities').set_keymap
 require('config.autocmds')
 require('config.utilities')
 require('config.keymap')

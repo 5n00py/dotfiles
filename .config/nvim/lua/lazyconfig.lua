@@ -13,7 +13,7 @@ require('lazy').setup({
 	'shaunsingh/nord.nvim',
 	-- A theme based off of the nord color palette
 	-- A light theme with cool blue and green hues
-	
+
 	'ellisonleao/gruvbox.nvim',
 	-- A retro-groove color scheme, distinguished by a dark background 
 	-- colored with warm, muted tones
@@ -46,9 +46,9 @@ require('lazy').setup({
 		end,
 	},
 
-	{	'nvim-telescope/telescope.nvim', version = '*', 
+	{	'nvim-telescope/telescope.nvim', version = '*',
 		-- Fuzzy Finder (files, lsp, etc)
-		dependencies = { 'nvim-lua/plenary.nvim' } 
+		dependencies = { 'nvim-lua/plenary.nvim' }
 	},
 
 	{	'nvim-telescope/telescope-fzf-native.nvim',
@@ -87,7 +87,7 @@ require('lazy').setup({
 			return require 'plugins.lsp_related.null_ls'
 		end,
 	},
-	
+
 	{	'williamboman/mason.nvim',
 		-- Easily install and manage LSP servers, DAP servers, linters, and formatters.
 		-- See ':help mason.nvim'
@@ -149,7 +149,7 @@ require('lazy').setup({
 	'tpope/vim-obsession',
 	-- Continuously updated session files
 	-- Useful to restore tmux sessions with tmux-resurrect
-	
+
 	{	'christoomey/vim-tmux-navigator',
 		-- When combined with a set of tmux key bindings, the plugin will 
 		-- allow you to navigate seamlessly between vim and tmux splits using 
@@ -160,10 +160,10 @@ require('lazy').setup({
 	'mbbill/undotree',
 	-- Visualize the undo history and make it easy to browse and switch between 
 	-- different undo branches.
-	
+
 	'simrat39/rust-tools.nvim',
 	-- A plugin to improve your rust experience in neovim.
-	
+
 	{	'mfussenegger/nvim-dap',
 		-- Basic debugger in Neovim
 		-- Extensibility and double as DAP client library
