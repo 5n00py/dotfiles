@@ -1,6 +1,9 @@
 # Open files with Neovim
 alias nv='nvim'
 
+# Open files with neovim in read only mode
+alias nvr='nvim -R'
+
 # Open Neovim configuration file
 alias nvconfig="nvim ~/.config/nvim/init.lua"
 

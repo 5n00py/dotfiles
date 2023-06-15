@@ -1,9 +1,6 @@
 # Display a compact, one-line per commit version of the commit log
 alias gl='git log --oneline'
 
-# Show changes that are staged for commit in neovim
-alias gds='git diff --staged | nvim -'
-
 # Show the status of the working tree
 alias gs='git status'
 
@@ -20,10 +17,13 @@ alias gau='git add --update'
 alias gc='git commit'
 
 # Commit changes with message
-alias gcm='git commit -m'
+alias gcm='git commit -m '
 
 # Display the diff of what is in branch1 that is not in branch2
 alias gd='git diff'
+
+# Display the diff of staged changes in neovim
+alias gds='git diff --staged'
 
 # Fetch changes from the remote repository
 alias gf='git fetch'
