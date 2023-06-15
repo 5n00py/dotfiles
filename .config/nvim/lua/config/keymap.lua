@@ -15,7 +15,7 @@ set_keymap('n', '<tab>k', ':tablast<CR>', "Go to the last tab")
 set_keymap('n', '<tab>m', ':tabmove ', "Move the current tab")
 set_keymap('n', '<tab>o', ':tabonly<CR>', "Close all other tabs")
 set_keymap('n', '<tab>h', ':tabprevious<CR>', "Go to the previous tab")
-set_keymap('n', '<tab>t', [[:tabnew | term<CR>:call feedkeys("i")<CR>]], 
+set_keymap('n', '<tab>t', [[:tabnew | term<CR>:call feedkeys("i")<CR>]],
 "Open a new tab with a terminal in insert mode")
 
 
@@ -44,7 +44,7 @@ set_keymap('n', '<leader><Up>', ':resize -5<CR>', "Resize window 5 up")
 ----------
 --
 set_keymap('n', '<leader>a', 'ggVG', "Select all text in a buffer")
-set_keymap('n', '<leader>ch', ':lua ClearSearchHighlighting()<CR>', 
+set_keymap('n', '<leader>ch', ':lua ClearSearchHighlighting()<CR>',
 "Clear search highlighting")
 
 -- Delete / paste text using the black hole register -> deleting text without 

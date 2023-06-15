@@ -24,8 +24,6 @@ function ClearSearchHighlighting()
 	vim.api.nvim_exec('nohlsearch', true)
 end
 
--- lua/config/keymap.lua
-
 -- set_keymap: A wrapper function for vim.api.nvim_set_keymap that sets noremap
 -- and silent to true by default.
 --
@@ -36,21 +34,23 @@ end
 --        (the keys to press).
 --   rhs: A string representing the right-hand side of the mapping 
 --        (the command to execute).
+--   desc: A string representing a description for the mapping.
 --
-local function set_keymap(mode, lhs, rhs)
+local function set_keymap(mode, lhs, rhs, desc)
 	-- Create an options table with noremap and silent set to true.
-	local opts = {noremap = true, silent = true}
+	local opts = {noremap = true, silent = true, desc = desc}
 
 	-- Call vim.api.nvim_set_keymap with the specified mode, lhs, rhs, and 
 	-- options.
 	vim.api.nvim_set_keymap(mode, lhs, rhs, opts)
 end
 
+
 return {
-  set_keymap = set_keymap,
-  ToggleLineNumbers = ToggleLineNumbers,
-  ToggleHighlightSearch = ToggleHighlightSearch,
-  ToggleWrap = ToggleWrap,
-  ToggleSpellChecking = ToggleSpellChecking,
-  ClearSearchHighlighting = ClearSearchHighlighting,
+	set_keymap = set_keymap,
+	ToggleLineNumbers = ToggleLineNumbers,
+	ToggleHighlightSearch = ToggleHighlightSearch,
+	ToggleWrap = ToggleWrap,
+	ToggleSpellChecking = ToggleSpellChecking,
+	ClearSearchHighlighting = ClearSearchHighlighting,
 }

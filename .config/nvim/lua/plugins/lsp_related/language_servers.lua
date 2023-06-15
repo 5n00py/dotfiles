@@ -22,7 +22,8 @@ lspconfig.clangd.setup{
 -- Shell language server
 lspconfig.bashls.setup {
 	on_attach = neodev.on_attach,
-	capabilities = neodev.capabilities
+	capabilities = neodev.capabilities,
+	filetypes = { 'zsh', 'bash', 'sh' },
 }
 
 lspconfig.lua_ls.setup {
