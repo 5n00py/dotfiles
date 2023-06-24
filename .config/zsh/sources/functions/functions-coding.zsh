@@ -29,7 +29,7 @@ venv() {
 
 # Define a function named "grip_preview" that takes a file as an argument$
 # renders the markdown and opens it in the default brosers
-grip_preview() {
+md_preview() {
   local file="$1"
   local port=6419  # Port number used by grip (can be modified if desired)
 
