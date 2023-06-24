@@ -74,6 +74,7 @@ require('plugins.treesitter')
 require('plugins.undotree')
 require('plugins.chatgpt')
 require('plugins.oil')
+require('plugins.dap_python')
 
 --                     ♫♪♪♫♪♪.ılılıll|̲̅̅●̲̅̅|̲̅̅=̲̅̅|̲̅̅●̲̅̅|llılılı.♫♪♪♫♪♪
 -- ============================================================================
