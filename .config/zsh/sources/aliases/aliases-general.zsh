@@ -20,3 +20,5 @@ alias ....='cd ../../..'      # Go up three directory levels
 alias .....='cd ../../../..'  # Go up four directory levels
 
 alias browser='qutebrowser'
+
+alias c='clear'

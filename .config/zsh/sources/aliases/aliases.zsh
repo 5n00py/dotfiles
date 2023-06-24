@@ -3,7 +3,7 @@ base_dir="${0:A:h}"
 # Source individual aliases files
 
 source "$base_dir/aliases-apt.zsh"
-source "$base_dir/aliases-coding.zsh"
+source "$base_dir/aliases-programming.zsh"
 source "$base_dir/aliases-general.zsh"
 source "$base_dir/aliases-git.zsh"
 source "$base_dir/aliases-misc.zsh"
