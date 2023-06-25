@@ -123,13 +123,6 @@ source "$HOME/.zsh/functions/functions-devices.zsh"
 # Set vi keybindings in Zsh shell for command line editing
 bindkey -v
 
-
-
-# Set breakpoint() in Python to call pudb
-export PYTHONBREAKPOINT="pudb.set_trace"
-
-export tmux_config_dir="$HOME/.config/tmux"
-
 # ------------------------------------------------------------------------------
 # PRIVATE FILE IMPORTS
 # ------------------------------------------------------------------------------

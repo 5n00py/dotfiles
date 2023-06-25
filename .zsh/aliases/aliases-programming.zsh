@@ -45,6 +45,9 @@ venv() {
 	fi
 }
 
+# Set breakpoint() in Python to call pudb
+export PYTHONBREAKPOINT="pudb.set_trace"
+
 
 # C Programming 
 # -------------
