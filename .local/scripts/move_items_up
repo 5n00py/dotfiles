@@ -1,0 +1,30 @@
+#!/bin/zsh
+
+move_items_up() {
+    current_dir=$(pwd)
+    parent_dir=$(dirname "$current_dir")
+
+    # Loop over all items (directories and files) in the current directory
+    for item in *; do
+        # Check if the item is a directory
+        if [ -d "$item" ]; then
+            # Check if a directory with the same name exists in the parent directory
+            if [ -d "$parent_dir/$item" ]; then
+                # If such a directory exists, print a message and skip this item
+                echo "Directory '$item' already exists in the parent directory. Skipping."
+            else
+                # If no such directory exists, move the directory to the parent directory
+                echo "Moving directory '$item' to '$parent_dir'"
+                mv "$item" "$parent_dir"
+            fi
+        # Check if the item is a regular file
+        elif [ -f "$item" ]; then
+            # Move the file to the parent directory
+            echo "Moving file '$item' to '$parent_dir'"
+            mv "$item" "$parent_dir"
+        fi
+    done
+}
+
+move_items_up
+

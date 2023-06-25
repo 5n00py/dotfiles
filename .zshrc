@@ -124,6 +124,13 @@ source "$HOME/.zsh/functions/functions-devices.zsh"
 bindkey -v
 
 # ------------------------------------------------------------------------------
+# Path Variables
+# ------------------------------------------------------------------------------
+
+# Add the directory for custom scripts to the beginning of the PATH variable
+export PATH="$HOME/.local/scripts:$PATH"
+
+# ------------------------------------------------------------------------------
 # PRIVATE FILE IMPORTS
 # ------------------------------------------------------------------------------
 

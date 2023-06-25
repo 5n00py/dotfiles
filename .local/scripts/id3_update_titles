@@ -1,0 +1,22 @@
+#!/bin/zsh
+
+# This function is used to set the ID3 title tag of all audio files in the current directory.
+# The title is taken from the file name, with the file extension removed.
+id3_update_titles() {
+	# Iterate over all files in the current directory
+	for file in *; do
+		# Check if the file is an audio file
+		if [[ "$file" =~ \.(mp3|wav|flac|aac|m4a)$ ]]; then
+			# Extract the format from the file extension
+			local format="${file##*.}"
+
+	  # Remove the format extension from the filename to derive the title
+	  local title="${file%.*}"
+
+	  # Use id3tool to set the title ID3 tag
+	  id3tool "$file" --set-title="$title"
+		fi
+	done
+}
+
+id3_update_titles
