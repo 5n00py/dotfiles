@@ -1,3 +1,5 @@
+#!/bin/zsh
+
 # Bluetooth Toggle
 # ----------------
 # Toggle connection state of a Bluetooth device.
@@ -37,3 +39,5 @@ function bt_toggle() {
 		echo "$DEVICE_NAME not found"
 	fi
 }
+
+bt_toggle

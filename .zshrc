@@ -114,7 +114,6 @@ source "$HOME/.zsh/aliases/aliases-tmux.zsh"
 source "$HOME/.zsh/aliases/aliases-zsh.zsh"
 
 source "$HOME/.zsh/functions/functions-custom.zsh"
-source "$HOME/.zsh/functions/functions-devices.zsh"
 
 # ------------------------------------------------------------------------------
 # Keybindings
