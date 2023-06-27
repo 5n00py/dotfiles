@@ -105,7 +105,7 @@ font:
     style: Italic
 
   # Point size of the font
-  size: 12.0
+  size: 11.0
 
   # Offset is the extra space around each character. offset.y can be thought of
   # as modifying the linespacing, and offset.x as modifying the letter spacing.
@@ -326,7 +326,7 @@ mouse_bindings:
 #    - Key0-Key9
 #
 #    A full list with available key codes can be found here:
-#    https://docs.rs/glutin/*/glutin/event/enum.VirtualKeyCode.html#variants
+#    https://docs.rs/servo-glutin/latest/glutin/enum.VirtualKeyCode.html#variant
 #
 #    Instead of using the name of the keys, the `key` field also supports using
 #    the scancode of the desired key. Scancodes have to be specified as a
@@ -370,9 +370,6 @@ mouse_bindings:
 #   - ReceiveChar
 #   - None
 #
-#   (macOS only):
-#   - ToggleSimpleFullscreen: Enters fullscreen without occupying another space
-#
 # - `command`: Fork and execute a specified command plus arguments
 #
 #    The `command` field must be a map containing a `program` string and an
@@ -411,7 +408,12 @@ mouse_bindings:
 # be mapped to the `ReceiveChar` action. Alternatively, you can use `None` for
 # a no-op if you do not wish to receive input characters for that binding.
 key_bindings:
-  - { key: V,       mods: Control,    action: Paste           }
-  - { key: C,       mods: Control,    action: Copy            }
-  - { key: Insert,                    action: PasteSelection  }
+  - { key: V,               mods: Control,    action: Paste             }
+  - { key: C,               mods: Control,    action: Copy              }
+  - { key: Insert,                            action: PasteSelection    }
+  - { key: NumpadAdd,                         action: IncreaseFontSize  }
+  - { key: NumpadSubtract,                    action: DecreaseFontSize  }
+  - { key: Plus,            mods: Control,    action: IncreaseFontSize  }
+  - { key: Minus,           mods: Control,    action: DecreaseFontSize  }
+  - { key: Key0,            mods: Control,    action: ResetFontSize     }
 
