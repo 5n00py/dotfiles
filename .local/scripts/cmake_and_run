@@ -1,0 +1,38 @@
+#!/bin/zsh
+
+# This script builds and runs a C project using cmake and make. The script
+# assumes the presence of a CMakeLists.txt file in the current directory. The
+# build artifacts are stored in a subdirectory named "build". The name of the
+# executable is assumed to be on the line containing "Built target" in the
+# output of make.
+
+# Check if a CMakeLists.txt file exists in the current directory. If not, print
+# an error message and exit.
+if [ ! -f CMakeLists.txt ]; then
+	echo "CMakeLists.txt not found in the current directory. Please make sure you are in the correct directory."
+	exit 1
+fi
+
+# Create a subdirectory named "build" if it doesn't already exist.
+mkdir -p build
+
+# Change to the "build" directory.
+cd build
+
+# Run cmake. This generates the necessary build files based on CMakeLists.txt.
+cmake ..
+
+# Run make to compile the project.
+# Capture the output of make in a variable.
+make_output=$(make)
+
+# Extract the executable name from the output of make. We use awk to find the
+# line containing "Built target" and print the fourth word (the executable
+# name).
+executable_name=$(echo "$make_output" | awk '/Built target/ { print $4 }')
+
+# Print the executable name for debugging purposes.
+echo "Executable name: $executable_name"
+
+# Run the newly compiled executable.
+./$executable_name
