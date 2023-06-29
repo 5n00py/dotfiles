@@ -22,7 +22,8 @@
 # function jbl() {
 #   bt_toggle "xx:xx:xx:xx:xx:xx" "JBL CLUB950NC"
 # }
-#
+
+
 function bt_toggle() {
 	DEVICE_MAC=$1
 	DEVICE_NAME=$2
@@ -40,4 +41,10 @@ function bt_toggle() {
 	fi
 }
 
-bt_toggle
+if [ $# -eq 2 ]; then
+	bt_toggle $1 $2
+elif [ $# -eq 1 ]; then
+	bt_toggle $1 "Device"
+else
+	echo "Usage: $0 <device_mac> [device_name]"
+fi
